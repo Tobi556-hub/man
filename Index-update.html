@@ -1,0 +1,2099 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images.jpeg">
+
+    <title>Egbe-Idimu Local Government Council</title>
+      
+
+    <style>
+        /* =====================================================
+           GENERAL SETTINGS
+        ===================================================== */
+
+        :root {
+            --primary: #08783f;
+            --primary-dark: #04552c;
+            --primary-light: #e9f7ef;
+            --accent: #c9a227;
+
+            --background: #f6faf7;
+            --white: #ffffff;
+            --text: #1d2b24;
+            --muted: #66736c;
+            --border: #dce8e0;
+
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+
+        /* =====================================================
+           BROWN THEME
+        ===================================================== */
+
+        body.brown-theme {
+            --primary: #5b3a29;
+            --primary-dark: #3d2418;
+            --primary-light: #f3e6da;
+            --accent: #deb887;
+
+            --background: #faf6f1;
+            --white: #ffffff;
+            --text: #2b211d;
+            --muted: #776b63;
+            --border: #e5d5c5;
+
+            --shadow: 0 10px 30px rgba(76, 48, 30, 0.10);
+        }
+
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button,
+        input,
+        textarea {
+            font-family: inherit;
+        }
+
+
+        /* =====================================================
+           TOP BAR
+        ===================================================== */
+
+        .top-bar {
+            background: var(--primary-dark);
+            color: white;
+            padding: 8px 5%;
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+        }
+
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        header {
+            background: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+
+        .header-main {
+            max-width: 1250px;
+            margin: auto;
+            padding: 15px 25px;
+
+            display: grid;
+            grid-template-columns: 110px 1fr 110px;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .header-logo {
+            width: 95px;
+            height: 95px;
+            object-fit: contain;
+            margin: auto;
+        }
+
+        .header-title {
+            text-align: center;
+        }
+
+        .header-title small {
+            color: var(--primary);
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .header-title h1 {
+            font-family: Georgia, "Times New Roman", serif;
+            color: var(--primary-dark);
+            font-size: 30px;
+            line-height: 1.2;
+            margin: 5px 0;
+        }
+
+        .header-title p {
+            color: var(--muted);
+            font-weight: bold;
+        }
+
+
+        /* =====================================================
+           NAVIGATION
+        ===================================================== */
+
+        nav {
+            border-top: 1px solid var(--border);
+        }
+
+        .nav-container {
+            max-width: 1250px;
+            margin: auto;
+            min-height: 58px;
+            padding: 0 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 5px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            display: block;
+            padding: 17px 12px;
+            font-size: 14px;
+            font-weight: bold;
+            border-bottom: 3px solid transparent;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+        }
+
+        .theme-button {
+            border: none;
+            background: var(--primary-light);
+            color: var(--primary-dark);
+            padding: 10px 15px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .menu-button {
+            display: none;
+            border: none;
+            background: var(--primary);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .hero {
+            min-height: 570px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+            color: white;
+
+            background:
+                linear-gradient(
+                    rgba(2, 73, 38, 0.90),
+                    rgba(7, 122, 64, 0.78)
+                ),
+                url("https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1800&q=80");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        body.brown-theme .hero {
+            background:
+                linear-gradient(
+                    rgba(61, 36, 24, 0.93),
+                    rgba(91, 58, 41, 0.78)
+                ),
+                url("https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1800&q=80");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            padding: 70px 20px;
+        }
+
+        .hero-label {
+            display: inline-block;
+            border: 1px solid rgba(255,255,255,.5);
+            background: rgba(255,255,255,.1);
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .hero h2 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(40px, 6vw, 75px);
+            line-height: 1.05;
+            margin-bottom: 20px;
+        }
+
+        .hero h2 span {
+            color: var(--accent);
+        }
+
+        .hero p {
+            max-width: 750px;
+            margin: auto;
+            font-size: 18px;
+            color: rgba(255,255,255,.92);
+        }
+
+        .hero-buttons {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 22px;
+            border-radius: 8px;
+            font-weight: bold;
+            border: 1px solid transparent;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--primary-dark);
+        }
+
+        .btn-outline {
+            border-color: white;
+            color: white;
+        }
+
+
+        /* =====================================================
+           GENERAL SECTION
+        ===================================================== */
+
+        .section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 45px;
+        }
+
+        .section-title span {
+            color: var(--primary);
+            text-transform: uppercase;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .section-title h2 {
+            font-family: Georgia, "Times New Roman", serif;
+            color: var(--primary-dark);
+            font-size: 40px;
+            margin: 8px 0;
+        }
+
+        .section-title p {
+            color: var(--muted);
+        }
+
+
+        /* =====================================================
+           QUICK INFORMATION
+        ===================================================== */
+
+        .quick-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .quick-card {
+            background: var(--white);
+            padding: 25px;
+            text-align: center;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+        }
+
+        .quick-icon {
+            width: 55px;
+            height: 55px;
+            margin: auto auto 15px;
+            display: grid;
+            place-items: center;
+            border-radius: 15px;
+            background: var(--primary-light);
+            font-size: 25px;
+        }
+
+        .quick-card h3 {
+            margin-bottom: 5px;
+            color: var(--primary-dark);
+        }
+
+        .quick-card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+
+        /* =====================================================
+           ABOUT
+        ===================================================== */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.2fr .8fr;
+            gap: 30px;
+        }
+
+        .about-card {
+            background: var(--white);
+            padding: 35px;
+            border-radius: 18px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+
+        .about-card h3 {
+            font-family: Georgia, "Times New Roman", serif;
+            color: var(--primary-dark);
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        .about-card p {
+            color: var(--muted);
+            margin-bottom: 15px;
+        }
+
+        .mission-vision {
+            display: grid;
+            gap: 20px;
+        }
+
+        .mv-card {
+            padding: 30px;
+            border-radius: 18px;
+            background: var(--primary);
+            color: white;
+        }
+
+        .mv-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .mv-card p {
+            color: rgba(255,255,255,.9);
+        }
+
+
+        /* =====================================================
+           OFFICIALS
+        ===================================================== */
+
+        .officials-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .official-card {
+            overflow: hidden;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+        }
+
+        .official-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            background: var(--primary-light);
+        }
+
+        .official-info {
+            padding: 18px;
+        }
+
+        .official-info h3 {
+            color: var(--primary-dark);
+            font-size: 18px;
+        }
+
+        .official-info p {
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+
+        /* =====================================================
+           DEPARTMENTS
+        ===================================================== */
+
+        .departments-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .department-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+            transition: .3s;
+        }
+
+        .department-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .department-icon {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .department-card h3 {
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+        }
+
+        .department-card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .hidden-department {
+            display: none;
+        }
+
+        .show-more-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .show-more {
+            border: none;
+            background: var(--primary);
+            color: white;
+            padding: 13px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+
+        /* =====================================================
+           SERVICES
+        ===================================================== */
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+
+        .service-card .service-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .service-card h3 {
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+        }
+
+        .service-card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+
+        /* =====================================================
+           CONTACT
+        ===================================================== */
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: .8fr 1.2fr;
+            gap: 25px;
+        }
+
+        .contact-info,
+        .contact-form {
+            background: var(--white);
+            padding: 30px;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-item {
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .contact-item strong {
+            display: block;
+            color: var(--primary-dark);
+        }
+
+        .contact-item span {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: var(--background);
+            outline: none;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: var(--primary);
+        }
+
+        textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+            background: var(--primary-dark);
+            color: white;
+            padding: 60px 20px 20px;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        footer h3 {
+            margin-bottom: 15px;
+        }
+
+        footer p,
+        footer li {
+            color: rgba(255,255,255,.72);
+            font-size: 14px;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer li {
+            margin: 8px 0;
+        }
+
+        .copyright {
+            max-width: 1200px;
+            margin: 40px auto 0;
+            padding-top: 20px;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,.15);
+            font-size: 13px;
+            color: rgba(255,255,255,.65);
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 950px) {
+
+            .quick-grid,
+            .officials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .departments-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+
+        @media (max-width: 700px) {
+
+            .top-bar {
+                flex-direction: column;
+                text-align: center;
+                gap: 4px;
+            }
+
+            .header-main {
+                grid-template-columns: 65px 1fr 65px;
+                padding: 10px;
+                gap: 5px;
+            }
+
+            .header-logo {
+                width: 60px;
+                height: 60px;
+            }
+
+            .header-title small {
+                font-size: 8px;
+            }
+
+            .header-title h1 {
+                font-size: 15px;
+            }
+
+            .header-title p {
+                font-size: 10px;
+            }
+
+            .menu-button {
+                display: block;
+            }
+
+            .nav-container {
+                padding: 8px 15px;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                padding: 15px;
+                box-shadow: var(--shadow);
+                flex-direction: column;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 10px;
+            }
+
+            .quick-grid,
+            .officials-grid,
+            .departments-grid,
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                min-height: 500px;
+            }
+
+            .hero h2 {
+                font-size: 42px;
+            }
+
+            .section-title h2 {
+                font-size: 32px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full {
+                grid-column: auto;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     TOP BAR
+========================================================= -->
+
+<div class="top-bar">
+    <span>Serving the people • Promoting grassroots development</span>
+    <span>Isheri-Olofin, Alimosho, Lagos State</span>
+</div>
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header>
+
+    <div class="header-main">
+
+        <!-- FIRST IMAGE / LEFT -->
+        <img
+            src="images.jpeg"
+            alt="Lagos State Government Logo"
+            class="header-logo"
+        >
+
+
+        <!-- TEXT IN THE MIDDLE -->
+        <div class="header-title">
+
+            <small>
+                Lagos State • Grassroots Administration
+            </small>
+
+            <h1>
+                Egbe-Idimu Local Government Council
+            </h1>
+
+            <p>
+                Isheri Olofin • Alimosho • Lagos State
+            </p>
+
+        </div>
+
+
+        <!-- SECOND IMAGE / RIGHT -->
+        <img
+            src="images.png"
+            alt="Egbe-Idimu Local Government Logo"
+            class="header-logo"
+        >
+
+    </div>
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <div class="nav-container">
+
+            <button
+                class="menu-button"
+                id="menuButton"
+            >
+                ☰ Menu
+            </button>
+
+
+            <ul
+                class="nav-links"
+                id="navLinks"
+            >
+
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+
+                <li>
+                    <a href="#about">About</a>
+                </li>
+
+                <li>
+                    <a href="#officials">Officials</a>
+                </li>
+
+                <li>
+                    <a href="#departments">Departments</a>
+                </li>
+
+                <li>
+                    <a href="#services">Services</a>
+                </li>
+
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+
+            </ul>
+
+
+            <button
+                class="theme-button"
+                id="themeButton"
+            >
+                Change Theme
+            </button>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================================================
+     HERO SECTION
+========================================================= -->
+
+<section
+    class="hero"
+    id="home"
+>
+
+    <div class="hero-content">
+
+        <div class="hero-label">
+            Welcome to Egbe-Idimu
+        </div>
+
+        <h2>
+            Building a
+            <span>Better Community</span>
+            Together
+        </h2>
+
+        <p>
+            Welcome to the official digital platform of Egbe-Idimu
+            Local Government Council. We are committed to responsive
+            governance, community development, public service and
+            a better quality of life for our residents.
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a
+                href="#services"
+                class="btn btn-primary"
+            >
+                Explore Services
+            </a>
+
+            <a
+                href="#about"
+                class="btn btn-outline"
+            >
+                Learn About Us
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     QUICK INFORMATION
+========================================================= -->
+
+<section class="section">
+
+    <div class="quick-grid">
+
+        <div class="quick-card">
+
+            <div class="quick-icon">
+                🏛️
+            </div>
+
+            <h3>
+                Good Governance
+            </h3>
+
+            <p>
+                Promoting transparent and responsible grassroots administration.
+            </p>
+
+        </div>
+
+
+        <div class="quick-card">
+
+            <div class="quick-icon">
+                🏘️
+            </div>
+
+            <h3>
+                Community Development
+            </h3>
+
+            <p>
+                Supporting projects and initiatives that improve local communities.
+            </p>
+
+        </div>
+
+
+        <div class="quick-card">
+
+            <div class="quick-icon">
+                💻
+            </div>
+
+            <h3>
+                Digital Services
+            </h3>
+
+            <p>
+                Making council information easier for residents to access.
+            </p>
+
+        </div>
+
+
+        <div class="quick-card">
+
+            <div class="quick-icon">
+                🤝
+            </div>
+
+            <h3>
+                Public Engagement
+            </h3>
+
+            <p>
+                Encouraging residents to participate in community development.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     ABOUT SECTION
+========================================================= -->
+
+<section
+    class="section"
+    id="about"
+>
+
+    <div class="section-title">
+
+        <span>
+            About The Council
+        </span>
+
+        <h2>
+            Serving The Community With Purpose
+        </h2>
+
+        <p>
+            Learn about our history, mission and vision.
+        </p>
+
+    </div>
+
+
+    <div class="about-grid">
+
+        <div class="about-card">
+
+            <h3>
+                Brief History
+            </h3>
+
+            <p>
+                Egbe-Idimu Local Council Development Area is a
+                grassroots administrative area in Lagos State,
+                serving communities around Egbe, Idimu and
+                Isheri-Olofin.
+            </p>
+
+            <p>
+                The council was established as part of Lagos State's
+                effort to bring governance and development closer
+                to the people at the grassroots level.
+            </p>
+
+            <p>
+                Today, the council works with residents and relevant
+                government institutions to support local infrastructure,
+                environmental management, social services and community
+                development.
+            </p>
+
+            <p>
+                <strong>
+                    Note:
+                </strong>
+
+                Replace this section with the council's officially
+                approved historical statement when available.
+            </p>
+
+        </div>
+
+
+        <div class="mission-vision">
+
+            <div class="mv-card">
+
+                <h3>
+                    Our Mission
+                </h3>
+
+                <p>
+                    To provide responsive, transparent and accessible
+                    grassroots services while supporting inclusive
+                    community development and improving the wellbeing
+                    of residents.
+                </p>
+
+            </div>
+
+
+            <div class="mv-card">
+
+                <h3>
+                    Our Vision
+                </h3>
+
+                <p>
+                    To build a peaceful, clean, digitally connected
+                    and economically vibrant community where residents
+                    can participate in sustainable development.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     OFFICIALS SECTION
+========================================================= -->
+
+<section
+    class="section"
+    id="officials"
+>
+
+    <div class="section-title">
+
+        <span>
+            Council Leadership
+        </span>
+
+        <h2>
+            Our Officials
+        </h2>
+
+        <p>
+            Meet the officials responsible for the administration
+            and development of the local government.
+        </p>
+
+    </div>
+
+
+    <div
+        class="officials-grid"
+        id="officialsGrid"
+    >
+     
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     DEPARTMENTS
+========================================================= -->
+
+<section
+    class="section"
+    id="departments"
+>
+
+    <div class="section-title">
+
+        <span>
+            Council Departments
+        </span>
+
+        <h2>
+            Departments & Their Functions
+        </h2>
+
+        <p>
+            Different departments work together to provide
+            services and support the administration of the council.
+        </p>
+
+    </div>
+
+
+    <div
+        class="departments-grid"
+        id="departmentsGrid"
+    >
+    </div>
+
+
+    <div class="show-more-container">
+
+        <button
+            class="show-more"
+            id="departmentButton"
+        >
+            Show More Departments
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     SERVICES
+========================================================= -->
+
+<section
+    class="section"
+    id="services"
+>
+
+    <div class="section-title">
+
+        <span>
+            Public Services
+        </span>
+
+        <h2>
+            Services For Residents
+        </h2>
+
+        <p>
+            Services and activities designed to support
+            residents and communities.
+        </p>
+
+    </div>
+
+
+    <div
+        class="services-grid"
+        id="servicesGrid"
+    >
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CONTACT SECTION
+========================================================= -->
+
+<section
+    class="section"
+    id="contact"
+>
+
+    <div class="section-title">
+
+        <span>
+            Get In Touch
+        </span>
+
+        <h2>
+            Contact Us
+        </h2>
+
+        <p>
+            Residents can use the information below to contact
+            the council.
+        </p>
+
+    </div>
+
+
+    <div class="contact-grid">
+
+
+        <!-- CONTACT INFORMATION -->
+
+        <div class="contact-info">
+
+            <div class="contact-item">
+
+                <strong>
+                    📍 Address
+                </strong>
+
+                <span>
+                    Isheri-Olofin, Alimosho,
+                    Lagos State, Nigeria.
+                </span>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <strong>
+                    ☎ Telephone
+                </strong>
+
+                <span>
+                    Replace with official council telephone number.
+                </span>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <strong>
+                    ✉ Email
+                </strong>
+
+                <span>
+                    Replace with official council email.
+                </span>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <strong>
+                    🕘 Office Hours
+                </strong>
+
+                <span>
+                    Monday – Friday
+                    <br>
+                    8:00 AM – 4:00 PM
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CONTACT FORM -->
+
+        <form
+            class="contact-form"
+            id="contactForm"
+        >
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label>
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter your name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group full">
+
+                    <label>
+                        Subject
+                    </label>
+
+                    <input
+                        type="text"
+                        id="subject"
+                        placeholder="Enter subject"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group full">
+
+                    <label>
+                        Message
+                    </label>
+
+                    <textarea
+                        id="message"
+                        placeholder="Write your message..."
+                        required
+                    ></textarea>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="btn"
+                style="background: var(--primary); color: white;"
+                type="submit"
+            >
+                Send Message
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <div class="footer-grid">
+
+
+        <div>
+
+            <h3>
+                Egbe-Idimu LCDA
+            </h3>
+
+            <p>
+                Serving the people through responsible grassroots
+                administration, community development and public
+                service.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Quick Links
+            </h3>
+
+            <ul>
+
+                <li>
+                    <a href="#home">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#about">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#officials">
+                        Officials
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#departments">
+                        Departments
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#contact">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Community
+            </h3>
+
+            <ul>
+
+                <li>
+                    Community Development
+                </li>
+
+                <li>
+                    Environmental Services
+                </li>
+
+                <li>
+                    Public Information
+                </li>
+
+                <li>
+                    Resident Services
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        © <span id="year"></span>
+        Egbe-Idimu Local Government Council.
+        All Rights Reserved.
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+/* =========================================================
+   OFFICIALS
+
+   CHANGE THE INFORMATION BELOW WHEN YOU HAVE
+   THE REAL NAMES AND PHOTOS.
+========================================================= */
+
+const officials = [
+
+    {
+        name: "Hon. Prince idris Balogun",
+        position: "Executive Chairman",
+        image: "Chairman.jpg"
+    },
+
+    {
+        name: "Name of Vice Chairman",
+        position: "Secretary",
+        image: "https://placehold.co/600x700/e9f7ef/08783f?text=Vice+Chairman"
+    },
+
+    {
+        name: "Name of Council Manager",
+        position: "Council Manager",
+        image: "https://placehold.co/600x700/e9f7ef/08783f?text=Council+Manager"
+    },
+
+    {
+        name: "Name of Council Treasurer",
+        position: "Council Treasurer",
+        image: "https://placehold.co/600x700/e9f7ef/08783f?text=Council+Treasurer"
+    }
+
+];
+
+
+
+/* =========================================================
+   DISPLAY OFFICIALS
+========================================================= */
+
+const officialsGrid =
+    document.getElementById("officialsGrid");
+
+
+officials.forEach(function(official) {
+
+    officialsGrid.innerHTML += `
+
+        <div class="official-card">
+
+            <img
+                src="${official.image}"
+                alt="${official.name}"
+            >
+
+            <div class="official-info">
+
+                <h3>
+                    ${official.name}
+                </h3>
+
+                <p>
+                    ${official.position}
+                </p>
+
+            </div>
+
+        </div>
+
+    `;
+
+});
+
+
+
+/* =========================================================
+   DEPARTMENTS
+
+   FIRST 8 ARE SHOWN BY DEFAULT.
+   THE REST APPEAR WHEN SHOW MORE IS CLICKED.
+========================================================= */
+
+const departments = [
+
+    {
+        icon: "💻",
+        name: "ICT",
+        description:
+        "Manages council computers, networks, digital systems, data and online services."
+    },
+
+    {
+        icon: "📊",
+        name: "Budget",
+        description:
+        "Prepares and monitors council budgets and supports effective financial planning."
+    },
+
+    {
+        icon: "🌾",
+        name: "Agriculture",
+        description:
+        "Supports farmers, agricultural programmes, food production and rural initiatives."
+    },
+
+    {
+        icon: "🧾",
+        name: "CT",
+        description:
+        "Supports treasury, revenue administration, financial records and related operations."
+    },
+
+    {
+        icon: "💰",
+        name: "Finance",
+        description:
+        "Handles financial operations, accounting records, payments, revenue and expenditure."
+    },
+
+    {
+        icon: "👥",
+        name: "HRO",
+        description:
+        "Handles staff administration, personnel records, welfare and human resources."
+    },
+
+    {
+        icon: "🎓",
+        name: "Education",
+        description:
+        "Supports education initiatives, learning programmes and educational development."
+    },
+
+    {
+        icon: "♻️",
+        name: "Waste Management",
+        description:
+        "Supports sanitation, environmental cleanliness and proper waste management."
+    },
+
+    {
+        icon: "📦",
+        name: "Procurement",
+        description:
+        "Coordinates purchasing, supplies, contracts and procurement documentation."
+    },
+
+    {
+        icon: "⚖️",
+        name: "Legal",
+        description:
+        "Provides legal advice and supports the council with legal documentation."
+    },
+
+    {
+        icon: "🏗️",
+        name: "Works & Infrastructure",
+        description:
+        "Supports roads, drainage, public facilities and infrastructure maintenance."
+    },
+
+    {
+        icon: "🏥",
+        name: "Health",
+        description:
+        "Supports healthcare programmes, health awareness and community wellness."
+    },
+
+    {
+        icon: "📣",
+        name: "Public Affairs",
+        description:
+        "Communicates council information, announcements and public engagement activities."
+    },
+
+    {
+        icon: "🗂️",
+        name: "Administration",
+        description:
+        "Coordinates general administration, records, correspondence and office operations."
+    },
+
+    {
+        icon: "🏪",
+        name: "Markets & Revenue",
+        description:
+        "Supports market administration and local revenue collection activities."
+    },
+
+    {
+        icon: "🌱",
+        name: "Environment",
+        description:
+        "Promotes environmental protection, beautification and sustainable practices."
+    }
+
+];
+
+
+let departmentsExpanded = false;
+
+
+function displayDepartments() {
+
+    const departmentGrid =
+        document.getElementById("departmentsGrid");
+
+    departmentGrid.innerHTML = "";
+
+
+    departments.forEach(function(department, index) {
+
+        let hiddenClass = "";
+
+        if (index >= 8 && !departmentsExpanded) {
+
+            hiddenClass = "hidden-department";
+
+        }
+
+
+        departmentGrid.innerHTML += `
+
+            <div class="department-card ${hiddenClass}">
+
+                <div class="department-icon">
+                    ${department.icon}
+                </div>
+
+                <h3>
+                    ${department.name}
+                </h3>
+
+                <p>
+                    ${department.description}
+                </p>
+
+            </div>
+
+        `;
+
+    });
+
+
+    document.getElementById("departmentButton").textContent =
+        departmentsExpanded
+        ? "Show Less"
+        : "Show More Departments";
+
+}
+
+
+displayDepartments();
+
+
+
+/* =========================================================
+   SHOW MORE / SHOW LESS
+========================================================= */
+
+document
+    .getElementById("departmentButton")
+    .addEventListener("click", function() {
+
+        departmentsExpanded =
+            !departmentsExpanded;
+
+        displayDepartments();
+
+    });
+
+
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+const services = [
+
+    {
+        icon: "📄",
+        name: "Local Documentation",
+        description:
+        "Administrative assistance and approved local documentation services."
+    },
+
+    {
+        icon: "🏘️",
+        name: "Community Development",
+        description:
+        "Support for community projects, infrastructure and grassroots development."
+    },
+
+    {
+        icon: "🧹",
+        name: "Environmental Services",
+        description:
+        "Sanitation, environmental cleanliness, waste management and awareness."
+    },
+
+    {
+        icon: "💻",
+        name: "Digital Information",
+        description:
+        "Access council information, announcements and public resources online."
+    },
+
+    {
+        icon: "👨‍👩‍👧",
+        name: "Social Services",
+        description:
+        "Community welfare and programmes supporting residents and vulnerable groups."
+    },
+
+    {
+        icon: "📢",
+        name: "Public Engagement",
+        description:
+        "Channels for residents to provide feedback, enquiries and suggestions."
+    }
+
+];
+
+
+const servicesGrid =
+    document.getElementById("servicesGrid");
+
+
+services.forEach(function(service) {
+
+    servicesGrid.innerHTML += `
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                ${service.icon}
+            </div>
+
+            <h3>
+                ${service.name}
+            </h3>
+
+            <p>
+                ${service.description}
+            </p>
+
+        </div>
+
+    `;
+
+});
+
+
+
+/* =========================================================
+   THEME SWITCHER
+
+   GREEN <-> BROWN
+========================================================= */
+
+const themeButton =
+    document.getElementById("themeButton");
+
+
+themeButton.addEventListener("click", function() {
+
+    document.body.classList.toggle("brown-theme");
+
+
+    const brownTheme =
+        document.body.classList.contains("brown-theme");
+
+
+    if (brownTheme) {
+
+        themeButton.innerHTML =
+            "🌿 Green Theme";
+
+        localStorage.setItem(
+            "websiteTheme",
+            "brown"
+        );
+
+    } else {
+
+        themeButton.innerHTML =
+            "🎨 Brown Theme";
+
+        localStorage.setItem(
+            "websiteTheme",
+            "green"
+        );
+
+    }
+
+});
+
+
+
+/* =========================================================
+   REMEMBER THE SELECTED THEME
+========================================================= */
+
+if (
+    localStorage.getItem("websiteTheme")
+    === "brown"
+) {
+
+    document.body.classList.add("brown-theme");
+
+    themeButton.innerHTML =
+        "Theme";
+
+}
+
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+const menuButton =
+    document.getElementById("menuButton");
+
+const navLinks =
+    document.getElementById("navLinks");
+
+
+menuButton.addEventListener("click", function() {
+
+    navLinks.classList.toggle("active");
+
+});
+
+
+/* Close mobile menu after clicking a link */
+
+document
+    .querySelectorAll(".nav-links a")
+    .forEach(function(link) {
+
+        link.addEventListener("click", function() {
+
+            navLinks.classList.remove("active");
+
+        });
+
+    });
+
+
+
+/* =========================================================
+   CONTACT FORM
+
+   THIS IS FRONT-END ONLY FOR NOW.
+   LATER WE CAN CONNECT IT TO PHP + MYSQL.
+========================================================= */
+
+document
+    .getElementById("contactForm")
+    .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+
+        const name =
+            document.getElementById("name").value;
+
+
+        alert(
+            "Thank you, " +
+            name +
+            ". Your message has been received."
+        );
+
+
+        this.reset();
+
+    });
+
+
+
+/* =========================================================
+   CURRENT YEAR
+========================================================= */
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
